@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>VINAYAK BENAKE | GAME ANIMATOR</title>
+  <meta name="description" content="Portfolio and interactive resume of Vinayak Benake, Game Animator and 2D Animator, showcasing animation experience, skills and creative work." />
+  <meta name="author" content="Vinayak Benake" />
+  <meta name="theme-color" content="#10172B" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / LinkedIn. After deploying, replace SITE_URL below with your live address
+       (e.g. https://your-username.github.io/vinayak-resume/) so LinkedIn can find the image. -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="Vinayak Benake — Game Animator" />
+  <meta property="og:title" content="VINAYAK BENAKE | GAME ANIMATOR" />
+  <meta property="og:description" content="Portfolio and interactive resume of Vinayak Benake, Game Animator and 2D Animator, showcasing animation experience, skills and creative work." />
+  <meta property="og:url" content="SITE_URL" />
+  <meta property="og:image" content="SITE_URL/assets/images/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Vinayak Benake, Game Animator" />
+  <meta property="profile:first_name" content="Vinayak" />
+  <meta property="profile:last_name" content="Benake" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="VINAYAK BENAKE | GAME ANIMATOR" />
+  <meta name="twitter:description" content="Portfolio and interactive resume of Vinayak Benake, Game Animator and 2D Animator." />
+  <meta name="twitter:image" content="SITE_URL/assets/images/og-image.jpg" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png" />
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Vinayak Benake",
+    "jobTitle": "Game Animator",
+    "worksFor": { "@type": "Organization", "name": "ZVKY Design Studio" },
+    "email": "mailto:benakevinayak@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Chandgad, Kolhapur", "addressRegion": "Maharashtra", "postalCode": "416507", "addressCountry": "IN" },
+    "sameAs": ["https://www.linkedin.com/in/vinayakbenake"],
+    "knowsAbout": ["2D Character Animation", "Game Animation", "Spine", "Adobe Animate", "Lip-Sync"]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800;900&family=Chakra+Petch:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="assets/images/portrait.jpg" fetchpriority="high" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#profile">Skip to content</a>
+
+  <!-- ===================== LOADING SCREEN ===================== -->
+  <div class="loader" id="loader" role="status" aria-live="polite">
+    <div class="loader__inner">
+      <div class="loader__logo" aria-hidden="true"><span>VB</span></div>
+      <p class="loader__title">VINAYAK BENAKE</p>
+      <p class="loader__sub">GAME ANIMATOR</p>
+      <div class="loader__bar" aria-hidden="true"><span id="loaderBar"></span></div>
+      <div class="loader__meta"><span id="loaderTip">Loading animation data…</span><span id="loaderPct">0%</span></div>
+    </div>
+    <button class="btn btn--ghost loader__skip" id="loaderSkip" type="button">Skip <kbd>Esc</kbd></button>
+  </div>
+
+  <!-- ===================== ATMOSPHERE ===================== -->
+  <div class="atmos" aria-hidden="true">
+    <div class="atmos__light atmos__light--blue" data-parallax="0.12"></div>
+    <div class="atmos__light atmos__light--purple" data-parallax="0.25"></div>
+    <div class="atmos__light atmos__light--orange" data-parallax="0.18"></div>
+    <div class="atmos__light atmos__light--cyan" data-parallax="0.32"></div>
+    <div class="atmos__grid"></div>
+    <canvas id="particles"></canvas>
+  </div>
+
+  <!-- ===================== TOP HUD ===================== -->
+  <header class="hud" id="hud">
+    <a href="#top" class="hud__brand" aria-label="Back to main menu">
+      <span class="hexlogo" aria-hidden="true">VB</span>
+      <span class="hud__id"><b>Vinayak Benake</b><small><span class="dot"></span>Player 01 · Online</small></span>
+    </a>
+    <nav class="hud__nav" aria-label="Main">
+      <a href="#profile" data-nav="profile">Character Profile</a>
+      <a href="#missions" data-nav="missions">Career Missions</a>
+      <a href="#skills" data-nav="skills">Skill Tree</a>
+      <a href="#loadout" data-nav="loadout">Equipment</a>
+      <a href="#replays" data-nav="replays">Gameplay Replay</a>
+      <a href="#contact" data-nav="contact">Contact</a>
+    </nav>
+    <div class="hud__actions">
+      <button class="btn btn--orange btn--sm" type="button" data-open="options" aria-haspopup="dialog" aria-controls="optionsPanel">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="12" r="1.8"/></svg><span>Options</span>
+      </button>
+      <button class="hud__menu" type="button" data-open="menu" aria-haspopup="dialog" aria-controls="menuPanel" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="rail" aria-label="Section progress">
+    <a href="#top" data-rail="top"><span>Menu</span></a>
+    <a href="#profile" data-rail="profile"><span>Profile</span></a>
+    <a href="#missions" data-rail="missions"><span>Missions</span></a>
+    <a href="#skills" data-rail="skills"><span>Skills</span></a>
+    <a href="#loadout" data-rail="loadout"><span>Loadout</span></a>
+    <a href="#replays" data-rail="replays"><span>Replay</span></a>
+    <a href="#workflow" data-rail="workflow"><span>Pipeline</span></a>
+    <a href="#contact" data-rail="contact"><span>Contact</span></a>
+  </nav>
+
+  <main>
+    <!-- ===================== 01 MAIN MENU ===================== -->
+    <section class="hero" id="top" aria-label="Main menu">
+      <div class="hero__copy">
+        <p class="chip chip--live" data-hero="fade"><span class="dot"></span>Currently working · <span data-bind="company">ZVKY Design Studio</span></p>
+        <h1 class="hero__name" aria-label="Vinayak Benake">
+          <span class="mask"><span class="hero__line" data-split>VINAYAK</span></span>
+          <span class="mask"><span class="hero__line hero__line--alt" data-split>BENAKE</span></span>
+        </h1>
+        <p class="hero__role" data-hero="fade"><b data-bind="title">GAME ANIMATOR</b><i aria-hidden="true">/</i><span data-bind="subtitle">2D ANIMATOR</span></p>
+        <p class="hero__tag" data-hero="fade">“<span data-bind="tagline">Bringing Characters to Life Through Movement.</span>”</p>
+
+        <nav class="gmenu" id="gameMenu" aria-label="Game menu" data-hero="menu">
+          <span class="gmenu__sel" id="menuSel" aria-hidden="true"></span>
+          <a href="#profile" class="gmenu__item" data-c="blue"><kbd>1</kbd><span>Character Profile</span><i aria-hidden="true">▸</i></a>
+          <a href="#missions" class="gmenu__item" data-c="purple"><kbd>2</kbd><span>Career Missions</span><i aria-hidden="true">▸</i></a>
+          <a href="#skills" class="gmenu__item" data-c="cyan"><kbd>3</kbd><span>Skill Tree</span><i aria-hidden="true">▸</i></a>
+          <a href="#loadout" class="gmenu__item" data-c="orange"><kbd>4</kbd><span>Equipment Loadout</span><i aria-hidden="true">▸</i></a>
+          <a href="#replays" class="gmenu__item" data-c="blue"><kbd>5</kbd><span>Gameplay Replay</span><i aria-hidden="true">▸</i></a>
+          <a href="#contact" class="gmenu__item" data-c="orange"><kbd>6</kbd><span>Contact</span><i aria-hidden="true">▸</i></a>
+        </nav>
+      </div>
+
+      <div class="hero__visual" data-hero="visual">
+        <div class="portrait" id="portrait">
+          <div class="portrait__halo" aria-hidden="true"></div>
+          <div class="portrait__frame">
+            <img class="portrait__img" src="assets/images/portrait.jpg" alt="Vinayak Benake at his animation workstation" width="1199" height="1312" fetchpriority="high" decoding="async" />
+            <div class="portrait__fallback" aria-hidden="true"><span>PORTRAIT<br /><small>assets/images/portrait.jpg</small></span></div>
+            <div class="portrait__sweep" aria-hidden="true"></div>
+          </div>
+          <span class="bracket bracket--tl" aria-hidden="true"></span><span class="bracket bracket--tr" aria-hidden="true"></span>
+          <span class="bracket bracket--bl" aria-hidden="true"></span><span class="bracket bracket--br" aria-hidden="true"></span>
+          <span class="portrait__tag" aria-hidden="true"><span class="dot"></span>P1 · Selected</span>
+        </div>
+        <dl class="charcard" data-hero="panel">
+          <div class="charcard__head"><span>Character Info</span><span class="charcard__lv">Since <b data-bind="since">2020</b></span></div>
+          <div class="charcard__row"><dt>Class</dt><dd data-bind="titleCase">Game Animator</dd></div>
+          <div class="charcard__row"><dt>Guild</dt><dd data-bind="company">ZVKY Design Studio</dd></div>
+          <div class="charcard__row"><dt>Base</dt><dd data-bind="baseShort">Kolhapur, India</dd></div>
+          <div class="charcard__row"><dt>Specialty</dt><dd data-bind="specialty">2D Character Animation</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===================== 02 PROFILE ===================== -->
+    <section class="section theme-blue" id="profile" aria-labelledby="profile-title">
+      <header class="sec-head">
+        <p class="sec-head__eyebrow">01 · Character Profile</p>
+        <h2 class="sec-head__title" id="profile-title"><span class="mask"><span>Player</span></span> <span class="mask"><span class="hl">Profile</span></span></h2>
+      </header>
+      <div class="profile">
+        <article class="gpanel profile__bio reveal">
+          <header class="gpanel__ribbon"><span>Bio</span></header>
+          <div class="gpanel__body">
+            <div id="bio"></div>
+            <ul class="tags" id="focusChips" aria-label="Focus areas"></ul>
+          </div>
+        </article>
+        <div class="profile__side">
+          <article class="gpanel gpanel--purple reveal">
+            <header class="gpanel__ribbon"><span>Status</span></header>
+            <div class="gpanel__body"><div class="stats" id="profileStats"></div></div>
+          </article>
+          <article class="gpanel gpanel--cyan reveal">
+            <header class="gpanel__ribbon"><span>Training Log</span></header>
+            <div class="gpanel__body"><ol class="training" id="education"></ol></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 03 MISSIONS ===================== -->
+    <section class="section theme-purple" id="missions" aria-labelledby="missions-title">
+      <header class="sec-head">
+        <p class="sec-head__eyebrow">02 · Career Missions</p>
+        <h2 class="sec-head__title" id="missions-title"><span class="mask"><span>Mission</span></span> <span class="mask"><span class="hl">Progress</span></span></h2>
+        <p class="sec-head__sub">Latest mission first. Open a mission to see its briefing and productions.</p>
+      </header>
+      <div class="timeline" id="timeline">
+        <div class="timeline__track" aria-hidden="true"><span id="timelineFill"></span></div>
+        <ol class="timeline__list" id="missionList"></ol>
+      </div>
+    </section>
+
+    <!-- ===================== 04 SKILLS ===================== -->
+    <section class="section theme-cyan" id="skills" aria-labelledby="skills-title">
+      <header class="sec-head">
+        <p class="sec-head__eyebrow">03 · Character Abilities</p>
+        <h2 class="sec-head__title" id="skills-title"><span class="mask"><span>Skill</span></span> <span class="mask"><span class="hl">Tree</span></span></h2>
+        <p class="sec-head__sub">Select an ability to inspect it. No ratings — each one shows where it comes from.</p>
+      </header>
+      <div class="legend" id="treeLegend" aria-label="Skill categories"></div>
+      <div class="skilltree">
+        <div class="skilltree__map" id="treeMap">
+          <svg class="skilltree__links" id="treeLinks" viewBox="0 0 1000 620" preserveAspectRatio="none" aria-hidden="true"></svg>
+          <div class="skilltree__nodes" id="treeNodes"></div>
+        </div>
+        <aside class="gpanel skilltree__detail" id="treeDetail" aria-live="polite"></aside>
+      </div>
+    </section>
+
+    <!-- ===================== 05 LOADOUT ===================== -->
+    <section class="section theme-orange" id="loadout" aria-labelledby="loadout-title">
+      <header class="sec-head">
+        <p class="sec-head__eyebrow">04 · Equipment Loadout</p>
+        <h2 class="sec-head__title" id="loadout-title"><span class="mask"><span>Equipment</span></span> <span class="mask"><span class="hl">Loadout</span></span></h2>
+        <p class="sec-head__sub">Software grouped by the proficiency stated on the resume. Select an item to inspect it.</p>
+      </header>
+      <div class="loadout" id="loadoutGrid"></div>
+    </section>
+
+    <!-- ===================== 06 REPLAYS ===================== -->
+    <section class="section section--wide theme-blue" id="replays" aria-labelledby="replays-title">
+      <header class="sec-head">
+        <p class="sec-head__eyebrow">05 · Gameplay Replay</p>
+        <h2 class="sec-head__title" id="replays-title"><span class="mask"><span>Animation</span></span> <span class="mask"><span class="hl">Showreel</span></span></h2>
+      </header>
+      <div class="filters" id="replayFilters" role="tablist" aria-label="Showreel categories"></div>
+      <div class="replays">
+        <div class="player gpanel" id="player">
+          <div class="player__stage" id="playerStage"></div>
+          <div class="player__bar">
+            <div class="player__info">
+              <p class="player__cat" id="playerCat">Replay</p>
+              <h3 id="playerTitle">Select a replay</h3>
+              <p class="player__desc" id="playerDesc"></p>
+            </div>
+            <div class="player__actions">
+              <button type="button" class="btn btn--icon" id="playerFs" aria-label="Fullscreen">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+              </button>
+              <a class="btn btn--icon" id="playerExt" href="#" target="_blank" rel="noopener" aria-label="Open original">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <ul class="reel-grid" id="reelGrid"></ul>
+      </div>
+    </section>
+
+    <!-- ===================== 07 WORKFLOW ===================== -->
+    <section class="section theme-purple" id="workflow" aria-labelledby="workflow-title">
+      <header class="sec-head">
+        <p class="sec-head__eyebrow">06 · Animation Development</p>
+        <h2 class="sec-head__title" id="workflow-title"><span class="mask"><span>Build</span></span> <span class="mask"><span class="hl">Pipeline</span></span></h2>
+      </header>
+      <div class="pipeline">
+        <div class="pipeline__line" aria-hidden="true"><span id="pipeFill"></span></div>
+        <ol class="pipeline__steps" id="pipeSteps"></ol>
+        <div class="gpanel pipeline__detail" id="pipeDetail" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ===================== 08 CONTACT ===================== -->
+    <section class="section contact theme-orange" id="contact" aria-labelledby="contact-title">
+      <p class="sec-head__eyebrow contact__eyebrow"><span class="dot"></span>07 · Multiplayer Connection</p>
+      <h2 class="contact__title" id="contact-title">
+        <span class="mask"><span>Ready to create</span></span>
+        <span class="mask"><span class="hl">the next experience?</span></span>
+      </h2>
+      <ul class="contact__grid" id="contactGrid"></ul>
+      <div class="contact__actions reveal" id="contactActions"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year">2026</span> Vinayak Benake · Game Animator</span>
+    <a href="#top">Back to main menu ▴</a>
+  </footer>
+
+  <!-- ===================== OVERLAY PANELS ===================== -->
+  <div class="scrim" id="scrim" hidden></div>
+
+  <!-- Mobile / full menu -->
+  <div class="dialog dialog--menu" id="menuPanel" role="dialog" aria-modal="true" aria-labelledby="menuTitle" hidden>
+    <div class="dialog__card">
+      <header class="dialog__head">
+        <h2 id="menuTitle">Main Menu</h2>
+        <button class="btn btn--icon" type="button" data-close aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </header>
+      <div class="dialog__body">
+        <nav class="menu-list" aria-label="Sections" id="menuList"></nav>
+        <p class="dialog__label">Quick actions</p>
+        <div class="action-grid" data-actions></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Options -->
+  <div class="dialog dialog--options" id="optionsPanel" role="dialog" aria-modal="true" aria-labelledby="optionsTitle" hidden>
+    <div class="dialog__card">
+      <header class="dialog__head">
+        <h2 id="optionsTitle">Options</h2>
+        <button class="btn btn--icon" type="button" data-close aria-label="Close options"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </header>
+      <div class="dialog__body">
+        <div class="action-grid" data-actions></div>
+        <p class="dialog__label">Portfolio link</p>
+        <div class="linkbox"><input type="text" id="linkField" readonly aria-label="Portfolio link" /><button class="btn btn--blue btn--sm" type="button" data-action="copy">Copy</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inspect (loadout item / skill on mobile) -->
+  <div class="dialog dialog--inspect" id="inspectPanel" role="dialog" aria-modal="true" aria-labelledby="inspectTitle" hidden>
+    <div class="dialog__card">
+      <header class="dialog__head">
+        <h2 id="inspectTitle">Inspect</h2>
+        <button class="btn btn--icon" type="button" data-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </header>
+      <div class="dialog__body" id="inspectBody"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <style>.loader{display:none}</style>
+    <p class="noscript">JavaScript is off. <a href="assets/documents/resume.pdf">Download the resume PDF</a>.</p>
+  </noscript>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="js/script.js" defer></script>
+</body>
+</html>
